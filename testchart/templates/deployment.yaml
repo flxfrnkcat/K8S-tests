@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: Webserver-deployment
 spec:
-  replicas: {{values.Webserver.replicas}}
+  replicas: {{ .Values.Webserver.replicas }}
   selector:
     matchLabels:
-      app: {{values.Webserver.name}}
+      app: {{ .Values.Webserver.name }}
   template:
     metadata:
       labels:
-        app: {{values.Webserver.name}}
+        app: {{ .Values.Webserver.name }}
     spec:
       containers:
-      - name: {{values.Webserver.name}}
+      - name: {{ .Values.Webserver.name }}
         image: nginx:latest
         ports:
-        - containerPort: {{values.Webserver.port}}
+        - containerPort: {{ .Values.Webserver.port }}
