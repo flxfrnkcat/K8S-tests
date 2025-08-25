@@ -1,0 +1,4 @@
+Webserver:
+  name: nginx
+  replicas: 2
+  port: 80
