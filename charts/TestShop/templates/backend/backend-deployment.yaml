@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: onlineshopneu:latest
+        image: onlineshopneu:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort : {{ .Values.Backend.Port }}
