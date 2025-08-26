@@ -9,4 +9,4 @@ Backend:
   label: backend
   Port: 8080
   Replicas: 2
-  ExternalPort: 30080
+  ExternalPort: 5283
