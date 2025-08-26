@@ -23,24 +23,23 @@ spec:
           env:
             - name: POSTGRES_USER
               valueFrom:
-                secrestKeyRef:
-                  name: {{ .Values.Database.config-name }}
+                secretKeyRef:
+                  name: {{ .Values.Database.configName }}
                   key: POSTGRES_USER
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.Database.config-name }}
+                  name: {{ .Values.Database.configName }}
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_DB
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.Database.config-name }}
+                  name: {{ .Values.Database.configName }}
                   key: POSTGRES_DB
           volumeMounts:
             - name: postgresstorage
               mountPath: /var/lib/postgresql/data
-  
-  voulmeClaimTemplates:
+  volumeClaimTemplates:
     - metadata:
         name: postgresstorage
       spec:

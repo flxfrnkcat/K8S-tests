@@ -1,5 +1,5 @@
 Database:
-  config-name: dbconfig
-  storageClaim: 1Gi
-  label: db
-  serviceName: dbservice
+  label: postgres
+  serviceName: postgres-service
+  configName: db-config
+  storageClaim: 5Gi
