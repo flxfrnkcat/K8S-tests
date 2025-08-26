@@ -2,3 +2,6 @@ Webserver:
   name: nginx
   replicas: 5
   port: 80
+
+LoadBalancer:
+  port: 80
