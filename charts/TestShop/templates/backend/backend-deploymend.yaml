@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: {{ .Values.Backend.Replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.Backend.label }}
+    spec:
+      containers:
+      - name: backend
+        image: localhost/onlineshopneu:latest
+        ports:
+        - containerPort: {{ .Values.Backend.Port }}
