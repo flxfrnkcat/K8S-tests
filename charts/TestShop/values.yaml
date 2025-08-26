@@ -1,0 +1,5 @@
+Database:
+  config-name: db-config
+  storageClaim: 1Gi
+  label: db
+  serviceName: db-service
