@@ -37,12 +37,12 @@ spec:
                   name: {{ .Values.Database.config-name }}
                   key: POSTGRES_DB
           volumeMounts:
-            - name: postgres-storage
+            - name: postgresstorage
               mountPath: /var/lib/postgresql/data
   
   voulmeClaimTemplates:
     - metadata:
-        name: postgres-storage
+        name: postgresstorage
       spec:
         accessModes: ["ReadWriteOnce"]
         resources:
