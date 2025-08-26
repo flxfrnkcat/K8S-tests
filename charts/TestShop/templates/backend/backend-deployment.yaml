@@ -17,7 +17,7 @@ spec:
         image: onlineshopneu:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - 8080 : {{ .Values.Backend.Port }}
+        - containerPort : {{ .Values.Backend.Port }}
         env:
         - name: DB_HOST
           valueFrom:
