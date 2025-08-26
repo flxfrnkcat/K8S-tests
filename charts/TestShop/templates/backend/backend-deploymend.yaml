@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: localhost/onlineshopneu:latest
+        image: onlineshopneu:latest
         ports:
         - containerPort: {{ .Values.Backend.Port }}
