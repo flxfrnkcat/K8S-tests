@@ -8,5 +8,5 @@ Backend:
   configName: backend-config
   label: backend
   Port: 8080
-  Replicas: 2
+  Replicas: 10
   ExternalPort: 5283
