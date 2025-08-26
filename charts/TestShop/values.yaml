@@ -1,5 +1,5 @@
 Database:
-  config-name: db-config
+  config-name: dbconfig
   storageClaim: 1Gi
   label: db
-  serviceName: db-service
+  serviceName: dbservice
