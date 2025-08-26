@@ -8,5 +8,5 @@ spec:
     app: {{ .Values.Webserver.name }}
   ports:
     - protocol: TCP
-      port: {{ .Vaules.LoadBalancer.port }}
+      port: {{ .Values.LoadBalancer.port }}
       targetPort: {{ .Values.Webserver.port }}
