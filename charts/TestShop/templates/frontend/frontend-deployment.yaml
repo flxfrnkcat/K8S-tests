@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: onlineshop-frontend:v1
+        image: localhost/onlineshop-frontend:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort : {{ .Values.Frontend.containerPort }}
