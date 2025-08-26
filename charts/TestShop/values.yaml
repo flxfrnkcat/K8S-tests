@@ -15,4 +15,4 @@ Frontend:
   replicas: 2
   label: frontend
   containerPort: 80
-  ExternalPort: 8081
+  ExternalPort: 9000
