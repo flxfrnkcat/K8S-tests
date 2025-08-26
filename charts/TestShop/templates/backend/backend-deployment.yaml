@@ -19,22 +19,22 @@ spec:
         ports:
         - containerPort : {{ .Values.Backend.Port }}
         env:
-        - name: DB_HOST
+        - name: DATABASE_HOST
           valueFrom:
             configMapKeyRef:
               name: {{ .Values.Backend.configName }}
               key: DB_HOST
-        - name: DB_USER
+        - name: DATABASE_USER
           valueFrom:
             secretKeyRef:
               name: {{ .Values.Database.configName }}
               key: POSTGRES_USER
-        - name: DB_PASSWORD
+        - name: DATABASE_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ .Values.Database.configName }}
               key: POSTGRES_PASSWORD
-        - name: DB_NAME
+        - name: DATABASE_NAME
           valueFrom:
             secretKeyRef:
               name: {{ .Values.Database.configName }}
