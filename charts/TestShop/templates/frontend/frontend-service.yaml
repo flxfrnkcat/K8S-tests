@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-LoadBalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: {{ .Values.Frontend.label }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.Frontend.ExternalPort }}
+      targetPort: {{ .Values.Frontend.containerPort }}

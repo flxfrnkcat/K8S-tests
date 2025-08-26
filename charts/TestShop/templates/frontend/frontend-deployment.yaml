@@ -1,0 +1,20 @@
+apiVErsion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  spec:
+  replicas: {{ .Values.Frontend.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.Frontend.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.Frontend.label }}
+    spec:
+      containers:
+      - name: frontend
+        image: onlineshop-frontend:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort : {{ .Values.Frontend.containerPort }}

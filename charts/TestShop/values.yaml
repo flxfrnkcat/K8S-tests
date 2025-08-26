@@ -10,3 +10,9 @@ Backend:
   Port: 8080
   Replicas: 2
   ExternalPort: 5283
+
+Frontend:
+  replicas: 2
+  label: frontend
+  containerPort: 80
+  ExternalPort: 8081
