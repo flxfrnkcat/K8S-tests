@@ -3,3 +3,4 @@ Database:
   serviceName: postgres-service
   configName: db-config
   storageClaim: 5Gi
+  
