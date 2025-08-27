@@ -14,13 +14,13 @@ spec:
             name: {{ .Values.Frontend.serviceName }}
             port:
               number: {{ .Values.Frontend.containerPort }}
-  - host: {{ .Values.Backend.host }}
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ .Values.Backend.serviceName }}
-            port:
-              number: {{ .Values.Backend.Port }}
+#  - host: {{ .Values.Backend.host }}
+#    http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: {{ .Values.Backend.serviceName }}
+#            port:
+#              number: {{ .Values.Backend.Port }}
