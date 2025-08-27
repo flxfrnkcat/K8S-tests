@@ -1,6 +1,6 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-metadta:
+metadata:
   name: testshop2-ingress
 spec:
   rules:
