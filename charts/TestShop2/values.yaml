@@ -11,11 +11,11 @@ Backend:
   Replicas: 2
   ExternalPort: 5283
   serviceName: backend-service
-  host: backend.testshop2.local
+  host: backend.testshop2.example
 
 Frontend:
   replicas: 2
   label: frontend
   containerPort: 80
   serviceName: frontend-service
-  host: testshop2.local
+  host: testshop2.example
