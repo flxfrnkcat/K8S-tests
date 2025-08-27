@@ -1,0 +1,21 @@
+Database:
+  label: postgres
+  serviceName: postgres-service
+  configName: db-config
+  storageClaim: 5Gi
+
+Backend:
+  configName: backend-config
+  label: backend
+  Port: 8080
+  Replicas: 2
+  ExternalPort: 5283
+  serviceName: backend-service
+  host: backend.testshop2.local
+
+Frontend:
+  replicas: 2
+  label: frontend
+  containerPort: 80
+  serviceName: frontend-service
+  host: testshop2.local

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: {{ .Values.Backend.Replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.Backend.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.Backend.label }}
+    spec:
+      containers:
+      - name: backend
+        image: onlineshopneu:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort : {{ .Values.Backend.Port }}
+        env:
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Values.Backend.configName }}
+              key: DB_HOST
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.Database.configName }}
+              key: POSTGRES_USER
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.Database.configName }}
+              key: POSTGRES_PASSWORD
+        - name: DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.Database.configName }}
+              key: POSTGRES_DB
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"

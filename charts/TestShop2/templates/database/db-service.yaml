@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name : {{ .Values.Database.serviceName }}
+spec:
+  selector:
+    app: {{ .Values.Database.label }}
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+  type: ClusterIP
