@@ -41,3 +41,5 @@ spec:
               key: POSTGRES_DB
         - name: ASPNETCORE_ENVIRONMENT
           value: "Development"
+      imagePullSecrets:
+      - name: ghcr-regcred
