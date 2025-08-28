@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: onlineshopneu:v1
+        image: ghcr.io/flxfrnkcat/onlineshop-backend:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort : {{ .Values.Backend.Port }}
