@@ -18,3 +18,5 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort : {{ .Values.Frontend.containerPort }}
+      imagePullSecrets:
+      - name: ghcr-regcred
