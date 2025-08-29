@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: db-importer
-        image: ghcr.io/flxfrnkcat/db-importer:v3
+        image: ghcr.io/flxfrnkcat/db-importer:v4
         env:
         - name: DATABASE_HOST
           valueFrom:

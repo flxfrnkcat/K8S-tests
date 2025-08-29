@@ -6,4 +6,4 @@ RUN apk add --no-cache bash postgresql-client
 COPY dump.sql /tmp/dump.sql
 
 # Setze den Befehl, der beim Start des Containers ausgeführt wird
-CMD ["/bin/bash", "-c", "PGPASSWORD=$DATABASE_PASSWORD psql -h $DATABASE_HOST -U $DATABASE_USER -d $DATABASE_NAME -f /tmp/dump.sql && echo 'PostgreSQL dump import successful'" && exit 0 || exit 1]
+CMD ["/bin/bash", "-c", "PGPASSWORD=$DATABASE_PASSWORD psql -h $DATABASE_HOST -U $DATABASE_USER -d $DATABASE_NAME -f /tmp/dump.sql && echo 'PostgreSQL dump import successful' && exit 0 || exit 1"]
