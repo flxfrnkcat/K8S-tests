@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-importer
+spec:
+  template:
+    spec:
+      containers:
+      - name: db-importer
+        image: ghcr.io/flxfrnkcat/db-importer:v1
+        env:
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Values.Backend.configName }}
+              key: DB_HOST
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.Database.configName }}
+              key: POSTGRES_USER
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.Database.configName }}
+              key: POSTGRES_PASSWORD
+        - name: DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.Database.configName }}
+              key: POSTGRES_DB
+        imagePullPolicy: IfNotPresent
+        imagePullSecrets:
+        - name: ghcr-regcred
+        
+      restartPolicy: OnFailure
+  backoffLimit: 4
