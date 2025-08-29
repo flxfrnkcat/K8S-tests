@@ -29,9 +29,9 @@ spec:
             secretKeyRef:
               name: {{ .Values.Database.configName }}
               key: POSTGRES_DB
-        imagePullPolicy: IfNotPresent
-        imagePullSecrets:
-        - name: ghcr-regcred
-        
+      imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+      - name: ghcr-regcred
+
       restartPolicy: OnFailure
   backoffLimit: 4
