@@ -8,6 +8,7 @@ spec:
       containers:
       - name: db-importer
         image: ghcr.io/flxfrnkcat/db-importer:v4
+        imagePullPolicy: IfNotPresent
         env:
         - name: DATABASE_HOST
           valueFrom:
@@ -29,7 +30,6 @@ spec:
             secretKeyRef:
               name: {{ .Values.Database.configName }}
               key: POSTGRES_DB
-      imagePullPolicy: IfNotPresent
       imagePullSecrets:
       - name: ghcr-regcred
 
