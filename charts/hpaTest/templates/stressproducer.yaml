@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress-producer
+  template:
+    metadata:
+      labels:
+        app: stress-producer
+    spec:
+      containers:
+      - name: stress-producer
+        image: busybox:latest
+        command: ["sh", "-c", "while true; do wget -q -O /dev/null http://nginx-service:80; done"]
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
